@@ -1,0 +1,28 @@
+@import-normalize;
+@import './variaveis';
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;400;700&family=Outfit:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $fonte-principal;
+}
+
+body {
+  min-height: 100vh;
+  background: $cinza-escuro;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  width: 3px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #707070;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000075;
+  border-radius: 20px;
+}

@@ -1,0 +1,27 @@
+@import 'styles/_variaveis.scss';
+
+.eventosDestaque {
+    color: $cor-texto;
+    background-color: $preto;
+    width: 736px;
+    border-radius: 12px;
+
+    &__titulo {
+        padding: 8px 0 8px 8px;
+    }
+
+    &__video {
+        width: 720px;
+        height: 400px;
+        margin: 8px;
+        border-radius: 8px;
+        border: none;
+    }
+
+    &__botoes {
+        img {
+            padding: 8px;
+            cursor: pointer;
+        }
+    }
+}

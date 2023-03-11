@@ -1,0 +1,21 @@
+@import 'styles/_variaveis.scss';
+
+.listaSuspensa {
+    background-color: $cinza-escuro;
+    width: 160px;
+    padding: 8px;
+    font-size: 18px;
+    color: $cor-texto;
+
+    &__opcoes {
+        background: transparent;
+        border: none;
+        color: $cor-texto;
+    }
+
+    &__opcao {
+        background-color: $cinza-escuro;
+        font-size: 18px;
+        border: none
+    }
+}

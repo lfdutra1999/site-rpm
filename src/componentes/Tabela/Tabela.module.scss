@@ -1,0 +1,23 @@
+@import 'styles/_variaveis.scss';
+
+.tabela {
+    width: 100%;
+    background-color: $cinza-escuro;
+    color: $cor-texto;
+    margin: 16px 0;
+
+    &__cabecalho {
+        background-color: $preto;
+        border: none;
+        padding: 8px;
+
+        &__coluna {
+            padding: 12px 0;
+        }
+    }
+
+    &__dado {
+        padding: 8px;
+        padding-left: 16px;
+    }
+}

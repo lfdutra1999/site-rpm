@@ -1,0 +1,15 @@
+@import 'styles/_variaveis.scss';
+
+
+.redesSocial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 16px 0;
+
+    img {
+        width: 32px;
+    }
+}

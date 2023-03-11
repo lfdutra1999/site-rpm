@@ -1,0 +1,25 @@
+@import 'styles/_variaveis.scss';
+
+.campo {
+    margin: 1.5em 0;
+    font-size: 1.5em;
+    text-align: left;
+
+    label {
+        display: block;
+        margin-bottom: 0.2rem;
+        color: $cor-texto;
+        
+    }
+
+    input {
+        width: 80%;
+        box-sizing: border-box;
+        padding: 0.5rem;
+    }
+
+    input::placeholder {
+        font-family: $fonte-principal;
+        font-size: 1.5em;
+    }
+}

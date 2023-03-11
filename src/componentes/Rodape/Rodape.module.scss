@@ -1,0 +1,23 @@
+@import 'styles/_variaveis.scss';
+
+.rodape {
+    background: url('/assets/img/background/daytona.png') no-repeat;
+    background-position-y: -600px;
+    text-align: center;
+    padding-top: 16px;
+
+    &__img {
+        width: 128px;
+    }
+
+    &__links {
+        padding: 8px 0;
+
+        &__link{
+            text-decoration: none;
+            color: $cor-texto;
+            margin: 8px 0;
+            font-size: 24px;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@import 'styles/_variaveis.scss';
+
+.temporadaResumo {
+    color: $cor-texto;
+    width: 400px;
+    text-align: center;
+    background-color: $cinza-escuro;
+    box-shadow: 8px 8px 8px rgba($color: #000000, $alpha: 0.25);
+    border-radius: 8px;
+
+    &__cabecalho {
+        background-color: $verde-escuro;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 8px 8px 0 0;
+
+
+        &__informacoes {
+            padding: 8px;
+            text-align: left;
+        }
+
+        &__duracao {
+            text-align: center;
+            width: 20%;
+            background-color: $preto;
+            margin-bottom: 8px;
+            border-radius: 0px 8px 0 0;
+        }
+    }
+
+    &__video {
+        width: 380px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 8px 8px 8px rgba($color: #000000, $alpha: 0.25);
+    }
+
+    &__rodape {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px;
+        padding-bottom: 8px;
+    }
+
+    &__campeoes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        list-style: none;
+    }
+    
+    &__campeao {
+        background-color: #505050;
+        padding: 8px;
+        margin-bottom: 8px;
+
+        &__titulo {
+            color: $dourado;
+        }
+    }
+
+    &__etapas {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        list-style: none;
+        background-color: $preto;
+    }
+
+    &__etapa {
+        padding: 4px 8px;
+    }
+
+}

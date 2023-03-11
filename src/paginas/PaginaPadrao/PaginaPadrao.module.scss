@@ -1,0 +1,10 @@
+@import 'styles/_variaveis.scss';
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $preto;
+    padding: 8px 10%;
+
+}

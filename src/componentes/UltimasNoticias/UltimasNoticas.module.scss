@@ -1,0 +1,21 @@
+@import 'styles/_variaveis.scss';
+
+.ultimasNoticias {
+    background-color: $branco;
+    padding: 16px 10%;
+
+    &__titulo {
+        padding-left: 16px;
+        border-left: 4px solid $azul-claro;
+    }
+
+    &__noticias {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+    }
+
+    &__noticia__item {
+        cursor: pointer;
+    }
+}

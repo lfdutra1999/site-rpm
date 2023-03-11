@@ -1,0 +1,14 @@
+@import 'styles/_variaveis.scss';
+
+.cabecalho {
+    background-image: url('/assets/img/background/top.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
+    color: $cor-texto;
+    padding: 1.5em 0;
+
+    &__logo {
+        width: 10rem;
+    }
+}

@@ -1,0 +1,15 @@
+@import 'styles/_variaveis.scss';
+
+.barraNav {
+    background-color: $cinza-claro;
+    color: $preto;
+    padding: 1em 10vw;
+    
+
+    &__lista {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,11 @@
+@import 'styles/_variaveis.scss';
+
+
+.principal {
+    text-align: center;
+
+    &__formulario {
+        width: 80vw;
+        margin-left:auto;
+    }
+}

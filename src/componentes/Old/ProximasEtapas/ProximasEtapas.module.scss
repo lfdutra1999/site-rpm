@@ -1,0 +1,119 @@
+@import 'styles/_variaveis.scss';
+
+.proximasEtapas {
+    text-align: center;
+    box-shadow: 8px 8px 8px rgba($color: #000000, $alpha: 0.25);
+
+    &__grids {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        background-color: $branco;
+        border-bottom: 4px solid $azul-claro;
+        padding: 0 4px;
+    }
+
+    &__corpo {
+        background-color: $cinza-escuro;
+        padding: 8px 8px 0px 8px;
+
+        &__etapas {
+            display: flex;
+            justify-content: center;
+            padding: 0px 2px 8px 2px;
+            gap: 2px;
+            list-style: none;
+        }
+
+        &__infos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
+        }
+
+        &__pistaImg {
+            width: 240px;
+            padding: 16px 0;
+        }
+
+        &__texto {
+            font-size: 16px;
+            color: $cinza-claro;
+        }
+
+        &__cronometro {
+            border-bottom: 3px solid $preto;
+            padding-bottom: 16px;
+        }
+    }
+
+    &__rodape {
+        background-color: $cinza-escuro;
+        padding: 16px 0;
+        border-bottom: 1px solid $preto;
+    }
+}
+
+.grid {
+    white-space: nowrap;
+    padding: 16px 12px;
+    color: $preto;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.grid_ativo {
+    border-top: 4px solid $preto;
+}
+
+.etapa {
+    background-color: $verde;
+    padding: 8px 12px;
+    border-bottom: 6px solid $azul-claro;
+    border-top: 6px solid $cinza-escuro;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.etapa_ativa {
+    background-color: $verde-escuro;
+    border-top: 6px solid $azul-claro;
+}
+
+.data {
+    border-right: 1px solid $branco;
+    padding: 0px 16px 0px 8px;
+    text-align: left;
+
+    &__dia {
+        font-size: 36px;
+        padding-bottom: 2px;
+        margin-bottom: 4px;
+
+        &__span {
+            border-bottom: 2px solid $dourado;
+        }
+    }
+}
+
+.pistaPais {
+
+    &__pista {
+        color: $dourado;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    &__pais {
+        color: $cinza-claro;
+        font-size: 12px;
+        margin-top: 16px;
+    }
+}
+
+.classe {
+    width: 48px;
+}

@@ -1,0 +1,53 @@
+@import 'styles/_variaveis.scss';
+
+.cabecalho {
+    background-image: url('/assets/img/background/mclaren.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: -250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    // flex-wrap: wrap;
+    align-items: center;
+    color: $cor-texto;
+    padding: 48px 240px 24px 240px;
+}
+
+.container {
+    &__logoTitulo{
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        width: 120px;
+    }
+
+    &__titulo {
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    &__descricao {
+        text-align: justify;
+        color: $cor-texto-destaque;
+        margin-bottom: 32px;
+        font-size: 24px;
+    }
+
+    &__botoes {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+}
+
+.destaque {
+    border-top: 2px solid $cor-texto;
+}
+
+.textoFundoBranco {
+    background-color: $branco;
+}

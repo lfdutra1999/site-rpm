@@ -1,0 +1,30 @@
+@import 'styles/_variaveis.scss';
+
+.itemMenu {
+    color: $preto;
+    font-family: $fonte-menu;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.itemMenu:hover {
+    color: $azul;
+    font-size: 1.6em;
+    transition: 500ms;
+}
+
+.botao-1 {
+    color: $cor-texto;
+    font-size: 1.5em;
+    text-decoration: none;
+    border: 1px solid $dourado-claro;
+    padding: 0.5em 3em;
+    border-radius: 0.35em;
+}
+
+.botao-1:hover {
+    color: $cor-texto;
+    font-size: 1.75em;
+    background-color: $cinza-escuro;
+    transition: 500ms;
+}
