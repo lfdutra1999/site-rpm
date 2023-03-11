@@ -2,4 +2,20 @@
 
 .formulario {
     text-align: left;
+    background-color: $azul-escuro;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 8px 8px 8px rgba($color: #000000, $alpha: 0.25);
+
+    &__camposAlinhados {
+        display: flex;
+        list-style: none;
+        gap: 0.5rem;
+        padding: 0;
+
+        &__campo {
+            padding: 0;
+            flex: 2 1 auto;
+        }
+    }
 }
