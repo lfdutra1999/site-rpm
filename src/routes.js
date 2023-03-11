@@ -15,7 +15,7 @@ function AppRoutes() {
 
       <Routes>
         <Route path='/' element={<PaginaPadrao />}>
-          <Route index path='inicio' element={<Inicio />} />
+          <Route index element={<Inicio />} />
           <Route index path='cadastro' element={<Cadastro />} />
         </Route>
       </Routes>

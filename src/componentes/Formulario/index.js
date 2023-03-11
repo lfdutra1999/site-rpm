@@ -17,6 +17,11 @@ const Formulario = () => {
             />
 
             <Campo
+                label='Data de nascimento.'
+                type='date'
+            />
+
+            <Campo
                 label='SteamId'
                 type='text'
                 placeholder='Digite o seu Steam Id'
@@ -29,11 +34,39 @@ const Formulario = () => {
             />
 
             <Campo
+                label='Chave Pix'
+                type='text'
+                placeholder='Digite  a chave pix para premiações.'
+            />
+
+            <Campo
+                label='Instagram'
+                type='text'
+                placeholder='Digite seu instagram'
+            />
+
+            <Campo
+                label='Cidade'
+                type='text'
+                placeholder='Digite a sua cidade'
+            />
+
+            <Campo 
+                label='Estado'
+                type='text'
+                placeholder='Digite o seu estado'
+            />
+
+            <Campo
+                
+            />
+
+            <Campo
                 label='Senha'
                 type='password'
                 placeholder='Crie o sua senha'
             />
-            
+
             <Campo
                 label='Confirme sua senha'
                 type='password'

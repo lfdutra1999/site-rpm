@@ -6,7 +6,7 @@ const BarraNav = () => {
         {
             id: 1,
             nome: "Inicio",
-            path: "inicio"
+            path: ""
         },
         {
             id: 3,
