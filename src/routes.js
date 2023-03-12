@@ -15,23 +15,29 @@ function AppRoutes() {
   }
 
   const [videoAtual, setVideoAtual] = useState(videoYoutube);
-  // const [botaoFrenteAtivo, setBotaoFrenteAtivo] = (false);
-  // const [botaoTrasAtivo, setBotaoTrasAtivo] = (false);
+  const [indexCarrosel, setIndexsCarrosel] = useState([1, 2, 3, 4, 5, 6]);
+  const [imagem, setImagem] = useState()
 
   return (
     <BrowserRouter>
       <Cabecalho />
       <BarraNav />
-
       <Routes>
-        <Route path='/' element={<PaginaPadrao />}>
+        <Route path='/' element={<PaginaPadrao
+          indexsCarrosel={indexCarrosel}
+          setIndexsCarrosel={setIndexsCarrosel}
+        />}
+        >
           <Route index element={<Inicio
             videoAtual={videoAtual}
             setVideoAtual={setVideoAtual}
           />
           }
           />
-          <Route index path='cadastro' element={<Cadastro />} />
+          <Route index path='cadastro' element={<Cadastro
+            imagem={imagem}
+            setImagem={setImagem}
+          />} />
         </Route>
       </Routes>
       <Rodape />

@@ -1,7 +1,8 @@
+import UploadImagem from 'componentes/UploadImagem';
 import Campo from './Campo';
 import styles from './Formulario.module.scss';
 
-const Formulario = () => {
+const Formulario = ({ imagem, setImagem }) => {
     return (
         <form className={styles.formulario}>
             <Campo
@@ -86,8 +87,9 @@ const Formulario = () => {
                 </li>
             </ul>
 
-            <Campo
-                label="foto"
+            <UploadImagem
+                imagem={imagem}
+                setImagem={setImagem}
             />
 
             <Campo

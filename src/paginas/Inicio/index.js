@@ -1,6 +1,5 @@
 import styles from './Inicio.module.scss';
 import EventosDestaque from "componentes/EventosDestaque";
-import { useState } from "react";
 import Noticias from 'componentes/Noticias';
 import Patrocinadores from 'componentes/Patrocinadores';
 import UltimasNoticias from 'componentes/UltimasNoticias';

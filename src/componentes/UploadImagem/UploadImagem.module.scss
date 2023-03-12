@@ -1,0 +1,24 @@
+@import 'styles/_variaveis.scss';
+
+.uploadImagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:32px;
+    margin: 32px 0;
+    
+    &__selecionarArquivo {
+        background-color: $azul-escuro;
+        color: $cor-texto;
+        padding: 16px;
+        cursor: pointer;
+    }
+
+    &__previewImagem {
+        max-width: 160px
+    }
+
+    &__input {
+        display: none;
+    }
+}

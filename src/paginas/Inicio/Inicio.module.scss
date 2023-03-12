@@ -2,12 +2,12 @@
 
 .principal {
     background: url('/assets/img/background/principal.png') no-repeat;
-    padding: 32px 10%;
+    padding: 2rem 10vw 0 10vw;
 
     &__container {
         display: flex;
         justify-content: space-between;
-        margin: 16px 0;
+        margin: 1rem 0;
         text-align: center;
     }
 }
