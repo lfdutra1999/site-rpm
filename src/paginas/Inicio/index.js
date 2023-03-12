@@ -8,12 +8,7 @@ import Tabelas from 'componentes/Tabelas';
 import HallDaFama from 'componentes/HallDaFama';
 
 
-const Inicio = () => {
-    const videoYoutube = {
-        index: 0,
-        id: "Xzh-sXi-Ge0"
-    }
-
+const Inicio = ({ videoAtual, setVideoAtual }) => {
     const videos = [
         {
             index: 0,
@@ -37,28 +32,25 @@ const Inicio = () => {
         },
     ]
 
-    const [videoAtual, setVideoAtual] = useState(videoYoutube);
-    const [botaoFrenteAtivo, setBotaoFrenteAtivo] = ('ativo');
-    const [botaoTrasAtivo, setBotaoTrasAtivo] = ('');
 
     function paraFrente() {
-        if (botaoFrenteAtivo === 'ativo') {
-            console.log(videoAtual)
-            const index = videoAtual.index + 1;
-            setVideoAtual(videos.filter(video => video.index === index));
-            if (index === (videos.length - 1)) { setBotaoFrenteAtivo('') }
-            setBotaoTrasAtivo('ativo');
+        let index
+        if (videoAtual.index === videos.length - 1) {
+            index = 0
+        } else {
+            index = videoAtual.index + 1;
         }
+        setVideoAtual(videos.filter(video => video.index === index)[0]);
     }
 
     function paraTras() {
-        if (botaoTrasAtivo === 'ativo') {
-            console.log(videoAtual)
-            const index = videoAtual.index - 1;
-            setVideoAtual(videos.filter(video => video.index === index));
-            if (index === 0) { setBotaoTrasAtivo('') }
-            setBotaoFrenteAtivo('ativo');
+        let index
+        if (videoAtual.index === 0) {
+            index = videos.length - 1
+        } else {
+            index = videoAtual.index - 1;
         }
+        setVideoAtual(videos.filter(video => video.index === index)[0]);
     }
 
     return (

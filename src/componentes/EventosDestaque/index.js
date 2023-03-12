@@ -16,13 +16,13 @@ const EventosDestaque = ({ youtubeID, paraFrente, paraTras }) => {
                     className={`${styles.proximasEtapas__setas}`}
                     src={anterior}
                     alt="Seta para trás"
-                    onClick={paraTras()}
+                    onClick={() => paraTras()}
                 />
                 <img
                     className={`${styles.proximasEtapas__setas}`}
                     src={proxima}
                     alt="Seta para frente"
-                    onClick={paraFrente()}
+                    onClick={() => paraFrente()}
                 />
             </div>
         </div>
