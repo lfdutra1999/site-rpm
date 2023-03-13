@@ -1,7 +1,10 @@
 @import 'styles/_variaveis.scss';
 
 .tabelas {
-    padding: 1em 10vw;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    width: $desktop;
     background: url('/assets/img/background/daytona.png') no-repeat;
     background-position-y: -12.5em;
     background-size: 100vw;

@@ -4,6 +4,9 @@
     text-align: center;
     background: url('/assets/img/background/cinza.png') no-repeat;
     background-position-y: -400px;
+    width: $desktop;
+    height: 665px;
+    margin: 0 auto;
 
     &__cabecalho {
         background-color: $preto;
@@ -26,7 +29,6 @@
         align-items: center;
         list-style: none;
         margin-top: 16px;
-        padding: 1rem 10vw 0 10vw;
     }
 
 }

@@ -2,9 +2,9 @@
 
 .cabecalho {
     display: flex;
-    justify-content: space-between;
+    margin: 0 auto;
+    justify-content: space-around;
     align-items: center;
     background-color: $preto;
-    padding: 8px 10%;
-
+    width: $desktop;
 }

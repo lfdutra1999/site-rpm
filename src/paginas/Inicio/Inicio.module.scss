@@ -2,9 +2,14 @@
 
 .principal {
     background: url('/assets/img/background/principal.png') no-repeat;
-    padding: 2rem 10vw 0 10vw;
+    background-size: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 
     &__container {
+        width: $desktop;
         display: flex;
         justify-content: space-between;
         margin: 1rem 0;

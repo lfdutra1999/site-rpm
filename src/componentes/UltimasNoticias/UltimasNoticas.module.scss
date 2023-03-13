@@ -2,7 +2,11 @@
 
 .ultimasNoticias {
     background-color: $branco;
-    padding: 16px 10%;
+    width: 1130px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    flex-wrap: wrap
 
     &__titulo {
         padding-left: 16px;
