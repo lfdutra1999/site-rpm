@@ -3,7 +3,7 @@ import Piloto from 'componentes/Piloto';
 import RedesSocial from 'componentes/RedesSocial';
 import UltimosResultados from 'componentes/UltimosResultados';
 import { Navigate } from 'react-router-dom';
-import getPilotos from 'services/getPilotos';
+//import getPilotos from 'services/getPilotos';
 import styles from './AreaDoPiloto.module.scss';
 
 const AreaDoPiloto = ({ logado, piloto, setPiloto }) => {

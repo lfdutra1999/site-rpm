@@ -3,28 +3,22 @@ import Botao from '../Botao';
 import Campo from '../Campo';
 import styles from '../Formulario.module.scss';
 import Logar from 'services/Login';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const FormularioLogin = ({ logado, setLogado, piloto, setPiloto }) => {
     const [login, setLogin] = useState('');
     const [senha, setSenha] = useState('');
     const navigate = useNavigate()
 
+    useEffect(() => {
+        if (logado) {
+            navigate(-1)
+        }
+    }, [logado, navigate])
+
     const logar = (evento) => {
         evento.preventDefault()
         Logar(login, senha, setLogado, setPiloto)
-        navigate(-1)
-    }
-
-    // const Logon = (evento) => {
-    //     evento.preventDefault()
-    //     useEffect(() => {
-    //         navigate('/area-do-piloto')
-    //         Logar(login, senha, setLogado, setPiloto)
-    //     }, [logado])
-    //}
-    if (logado) {
-        return <Navigate replace to="area-do-piloto" />
     }
 
     return (

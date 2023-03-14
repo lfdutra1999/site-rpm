@@ -1,13 +1,21 @@
 import api from 'services/api';
 
-const Logar = ( login, senha, setLogado, setPiloto) => {
+const Logar = (login, senha, setLogado, setPiloto) => {
     const body = {
         'login': login
     }
+
     const verificaLogin = (response) => {
-        setPiloto(response.uuid)
-        var bcrypt = require('bcryptjs');
-        return bcrypt.compareSync(senha, response.senha)
+        if (response.uuid) {
+            setPiloto({ uuid: response.uuid })
+            var bcrypt = require('bcryptjs');
+            if (bcrypt.compareSync(senha, response.senha)) {
+                return true
+            }
+        }
+        alert("Usuário/Senha inválido!!!")
+        return false
+
     }
     api
         .post('/login', body)

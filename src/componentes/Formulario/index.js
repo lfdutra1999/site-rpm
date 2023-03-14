@@ -4,6 +4,7 @@ import Campo from './Campo';
 import styles from './Formulario.module.scss';
 import { v4 as uuid } from 'uuid';
 import CadastrarPiloto from 'services/CadastrarPiloto';
+import { useNavigate } from 'react-router-dom';
 
 const Formulario = () => {
     const [login, setLogin] = useState('')
@@ -18,6 +19,7 @@ const Formulario = () => {
     const [estado, setEstado] = useState('')
     const [controlador, setControlador] = useState('')
     const [linkcanal, setLinkcanal] = useState('')
+    const navigate = useNavigate()
 
     const cadastrar = (evento) => {
         evento.preventDefault()
@@ -41,6 +43,8 @@ const Formulario = () => {
         }
 
         CadastrarPiloto(piloto)
+        navigate('/login')
+
     }
 
     return (

@@ -8,7 +8,7 @@ import Login from 'paginas/Login';
 import PaginaPadrao from 'paginas/PaginaPadrao';
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import getPilotos from 'services/getPilotos';
+//import getPilotos from 'services/getPilotos';
 import Cabecalho from './componentes/Cabecalho';
 import './styles/globalStyle.scss';
 
@@ -20,8 +20,8 @@ function AppRoutes() {
 
   const [videoAtual, setVideoAtual] = useState(videoYoutube);
   const [indexCarrosel, setIndexsCarrosel] = useState([1, 2, 3, 4, 5, 6]);
-  const [imagem, setImagem] = useState()
-  const [piloto, setPiloto] = useState([])
+  //const [imagem, setImagem] = useState()
+  const [piloto, setPiloto] = useState({})
   const [pilotos, setPilotos] = useState([])
   const [logado, setLogado] = useState(false)
 
