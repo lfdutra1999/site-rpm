@@ -1,21 +1,25 @@
 @import 'styles/_variaveis.scss';
 
 .formulario {
-    text-align: left;
-    background-color: $azul-escuro;
+    text-align: center;
+    background-color: transparent;
     padding: 1rem;
-    margin: 1rem 0;
-    box-shadow: 8px 8px 8px rgba($color: #000000, $alpha: 0.25);
+    margin: 1rem 15vw;
+    color: $cor-texto;
+    // box-shadow: 8px 8px 8px rgba($color: #000000, $alpha: 0.25);
 
-    &__camposAlinhados {
+    &__titulo {
+        font-size: 3rem;
+        color: $cor-texto;
+    }
+
+    &__container {
         display: flex;
-        list-style: none;
-        gap: 0.5rem;
-        padding: 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
         &__campo {
-            padding: 0;
-            flex: 2 1 auto;
+            flex-basis: 49%;
         }
     }
 }

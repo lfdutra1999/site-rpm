@@ -1,0 +1,10 @@
+@import 'styles/_variaveis.scss';
+
+.piloto {
+    background-color: $azul-escuro;
+    color: $cor-texto;
+
+    &__imagem {
+        max-width: 200px;
+    }
+}

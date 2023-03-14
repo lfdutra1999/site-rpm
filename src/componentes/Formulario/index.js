@@ -1,109 +1,170 @@
-import UploadImagem from 'componentes/UploadImagem';
+import { useState } from 'react';
+import Botao from './Botao';
 import Campo from './Campo';
 import styles from './Formulario.module.scss';
+import { v4 as uuid } from 'uuid';
+import CadastrarPiloto from 'services/CadastrarPiloto';
 
-const Formulario = ({ imagem, setImagem }) => {
+const Formulario = () => {
+    const [login, setLogin] = useState('')
+    const [senha, setSenha] = useState('')
+    const [nome, setNome] = useState('')
+    const [sobrenome, setSobrenome] = useState('')
+    const [nickname, setNickname] = useState('')
+    const [steamid, setSteamid] = useState('')
+    const [whatsapp, setWhatsapp] = useState('')
+    const [chavepix, setChavePix] = useState('')
+    const [cidade, setCidade] = useState('')
+    const [estado, setEstado] = useState('')
+    const [controlador, setControlador] = useState('')
+    const [linkcanal, setLinkcanal] = useState('')
+
+    const cadastrar = (evento) => {
+        evento.preventDefault()
+        var bcrypt = require('bcryptjs');
+        var salt = bcrypt.genSaltSync(10);
+        var hash = bcrypt.hashSync(senha, salt);
+        const piloto = {
+            "uuid": uuid(),
+            "login": login,
+            "senha": hash,
+            "nome": nome,
+            "sobrenome": sobrenome,
+            "nickname": nickname,
+            "steamid": steamid,
+            "whatsapp": whatsapp,
+            "chavepix": chavepix,
+            "cidade": cidade,
+            "estado": estado,
+            "controlador": controlador,
+            "linkcanal": linkcanal
+        }
+
+        CadastrarPiloto(piloto)
+    }
+
     return (
-        <form className={styles.formulario}>
-            <Campo
-                label='E-mail'
-                type='email'
-                placeholder='Digite o seu e-mail'
-            />
-
-            <ul className={styles.formulario__camposAlinhados}>
-                <li className={styles.formulario__camposAlinhados__campo}>
-                    <Campo
-                        label='Nome'
-                        type='text'
-                        placeholder='Digite o seu nome'
-                    />
-                </li>
-                <li className={styles.formulario__camposAlinhados__campo}>
-                    <Campo
-                        label='Data de nascimento.'
-                        type='date'
-                        placeholder='11/03/2023'
-                        valor='11/03/2023'
-                    />
-                </li>
-            </ul>
-
-            <ul className={styles.formulario__camposAlinhados}>
-                <li className={styles.formulario__camposAlinhados__campo}>
-                    <Campo
-                        label='Senha'
-                        type='password'
-                        placeholder='Crie o sua senha'
-                    />
-                </li>
-                <li className={styles.formulario__camposAlinhados__campo}>
-                    <Campo
-                        label='Confirme sua senha'
-                        type='password'
-                        placeholder='Confirme a sua senha'
-                    />
-                </li>
-            </ul>
-
-            <Campo
-                label='SteamId'
-                type='text'
-                placeholder='Digite o seu Steam Id'
-            />
-
-            <Campo
-                label='WhatsApp'
-                type='tel'
-                placeholder='Digite o seu WhatsApp'
-            />
-
-            <Campo
-                label='Chave Pix'
-                type='text'
-                placeholder='Digite  a chave pix para premiações.'
-            />
-
-            <Campo
-                label='Instagram'
-                type='text'
-                placeholder='Digite seu instagram'
-            />
-
-            <ul className={styles.formulario__camposAlinhados}>
-                <li className={styles.formulario__camposAlinhados__campo}>
-                    <Campo
-                        label='Cidade'
-                        type='text'
-                        placeholder='Digite a sua cidade'
-                    />
-                </li>
-                <li className={styles.formulario__camposAlinhados__campo}>
-                    <Campo
-                        label='Estado'
-                        type='text'
-                        placeholder='Digite o seu estado'
-                    />
-                </li>
-            </ul>
-
-            <UploadImagem
-                imagem={imagem}
-                setImagem={setImagem}
-            />
-
-            <Campo
-                label='Controlador/volante utilizado'
-                type='text'
-                placeholder='Digite o link do seu canal'
-            />
-
-            <Campo
-                label='Link do seu canal(Youtube/Twitch)'
-                type='text'
-                placeholder='Digite o link do seu canal'
-            />
-        </form>
+        <form className={styles.formulario} onSubmit={cadastrar}>
+            <section>
+                <h3 className={styles.formulario__titulo}>
+                    INFORMAÇÕES ESSENCIAIS
+                </h3>
+                <div className={styles.formulario__container}>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='Login:'
+                            valor={login}
+                            obrigatorio={true}
+                            type='text'
+                            aoAlterado={valor => setLogin(valor)}
+                        />
+                    </span>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='Senha:'
+                            valor={senha}
+                            obrigatorio={true}
+                            type='password'
+                            aoAlterado={valor => setSenha(valor)}
+                        />
+                    </span>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='Nome:'
+                            valor={nome}
+                            obrigatorio={true}
+                            type='text'
+                            aoAlterado={valor => setNome(valor)}
+                        />
+                    </span>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='Sobrenome:'
+                            valor={sobrenome}
+                            obrigatorio={true}
+                            type='text'
+                            aoAlterado={valor => setSobrenome(valor)}
+                        />
+                    </span>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='Nickname(Nome da steam):'
+                            valor={nickname}
+                            obrigatorio={true}
+                            type='text'
+                            aoAlterado={valor => setNickname(valor)}
+                        />
+                    </span>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='SteamId(GUID):'
+                            valor={steamid}
+                            obrigatorio={true}
+                            type='text'
+                            aoAlterado={valor => setSteamid(valor)}
+                        />
+                    </span>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='WhatsApp (com DDD):'
+                            valor={whatsapp}
+                            obrigatorio={true}
+                            type='tel'
+                            aoAlterado={valor => setWhatsapp(valor)}
+                        />
+                    </span>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='Chave pix para premiações:'
+                            valor={chavepix}
+                            obrigatorio={true}
+                            type='text'
+                            aoAlterado={valor => setChavePix(valor)}
+                        />
+                    </span>
+                </div>
+            </section>
+            <section>
+                <h3 className={styles.formulario__titulo}>
+                    INFORMAÇÕES ADICIONAIS
+                </h3>
+                <div className={styles.formulario__container}>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='Cidade:'
+                            valor={cidade}
+                            type='text'
+                            aoAlterado={valor => setCidade(valor)}
+                        />
+                    </span>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='Estado:'
+                            valor={estado}
+                            type='text'
+                            aoAlterado={valor => setEstado(valor)}
+                        />
+                    </span>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='Controlador:'
+                            valor={controlador}
+                            type='text'
+                            aoAlterado={valor => setControlador(valor)}
+                        />
+                    </span>
+                    <span className={styles.formulario__container__campo}>
+                        <Campo
+                            placeholder='Link do seu canal:'
+                            valor={linkcanal}
+                            type='text'
+                            aoAlterado={valor => setLinkcanal(valor)}
+                        />
+                    </span>
+                </div>
+            </section>
+            <Botao>Confirmar</Botao>
+        </form >
     )
 }
 

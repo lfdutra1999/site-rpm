@@ -3,7 +3,7 @@ import ProximasEtapas from 'componentes/ProximasEtapas';
 import { Outlet } from 'react-router-dom';
 import styles from './PaginaPadrao.module.scss';
 
-const PaginaPadrao = ({ indexsCarrosel, setIndexsCarrosel }) => {
+const PaginaPadrao = ({ indexsCarrosel, setIndexsCarrosel, logado, setLogado }) => {
     return (
         <>
             <header className={styles.cabecalho}>
@@ -14,8 +14,8 @@ const PaginaPadrao = ({ indexsCarrosel, setIndexsCarrosel }) => {
                     />
                 </div>
                 <div className={styles.cabecalho__container}>
-                    <LinkInterno path={"areaPiloto"} estilo="botao-1">
-                        Área do piloto
+                    <LinkInterno path={logado ? "area-do-piloto" : "login"} estilo="botao-1">
+                        {logado ? "Area do piloto" : "Login"}
                     </LinkInterno>
                 </div>
             </header>
