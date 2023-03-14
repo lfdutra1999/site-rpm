@@ -1,10 +1,35 @@
 @import 'styles/_variaveis.scss';
 
 .piloto {
-    background-color: $azul-escuro;
+    background: url('/assets/img/background/background_results.png') no-repeat;
     color: $cor-texto;
+    text-align: center;
+    border-radius: 10%;
+
+    &__detalhes {
+        padding: 2rem;
+    }
+
+    &__perfil {
+        background-color: $cinza-escuro;
+        padding: 2rem;
+        border: 4px solid $branco;
+        border-radius: 100%;
+        width: 200px;
+        margin: 0 auto;
+
+    }
 
     &__imagem {
-        max-width: 200px;
+        max-width: 180px;
+    }
+
+    &__titulo {
+        margin: 1rem 0;
+        font-size: 1.75rem;
+    }
+
+    &__informacoes {
+        font-size: 1.25rem;
     }
 }

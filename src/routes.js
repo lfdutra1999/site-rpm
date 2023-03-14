@@ -8,6 +8,7 @@ import Login from 'paginas/Login';
 import PaginaPadrao from 'paginas/PaginaPadrao';
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import getPilotos from 'services/getPilotos';
 import Cabecalho from './componentes/Cabecalho';
 import './styles/globalStyle.scss';
 
@@ -50,7 +51,9 @@ function AppRoutes() {
             setPiloto={setPiloto}
           />} />
           <Route path='area-do-piloto' element={<AreaDoPiloto
+            logado={logado}
             piloto={piloto}
+            setPiloto={setPiloto}
           />} />
         </Route>
       </Routes>

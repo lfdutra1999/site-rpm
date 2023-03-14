@@ -1,22 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Botao from '../Botao';
 import Campo from '../Campo';
 import styles from '../Formulario.module.scss';
 import Logar from 'services/Login';
-import  { redirect as Redirect } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const FormularioLogin = ({ logado, setLogado, piloto, setPiloto }) => {
     const [login, setLogin] = useState('');
     const [senha, setSenha] = useState('');
+    const navigate = useNavigate()
 
     const logar = (evento) => {
         evento.preventDefault()
         Logar(login, senha, setLogado, setPiloto)
-        if (logado) {
-            <Redirect to={'/area-do-piloto'} />
-        }
+        navigate(-1)
     }
 
+    // const Logon = (evento) => {
+    //     evento.preventDefault()
+    //     useEffect(() => {
+    //         navigate('/area-do-piloto')
+    //         Logar(login, senha, setLogado, setPiloto)
+    //     }, [logado])
+    //}
+    if (logado) {
+        return <Navigate replace to="area-do-piloto" />
+    }
 
     return (
         <form className={styles.formulario} onSubmit={logar}>

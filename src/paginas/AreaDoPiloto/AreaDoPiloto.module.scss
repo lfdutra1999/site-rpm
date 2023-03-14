@@ -1,0 +1,30 @@
+@import 'styles/_variaveis.scss';
+
+.principal {
+    padding: 0 10vw;
+    background: url('/assets/img/background/background_area-do-piloto.png') no-repeat;
+    background-size: 100%;
+    border-bottom: 6px solid $preto;
+
+    &__piloto {
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        padding: 5rem 0;
+    }
+}
+
+.ultimosResultados {
+    padding: 0 10vw;
+    background: url('/assets/img/background/ultimosResultados.png') no-repeat;
+    background-size: 100%;
+    background-position-y: -300px;
+    border-bottom: 6px solid $preto;
+    text-align: center;
+    color: $cor-texto;
+
+    &__titulo {
+        font-size: 5rem;
+        padding: 2rem 0 1rem 0;
+    }
+}
