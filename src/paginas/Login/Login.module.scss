@@ -1,9 +1,15 @@
 @import 'styles/_variaveis.scss';
 
-
 .principal {
     text-align: center;
     background: url('/assets/img/background/mercedes.png') no-repeat;
-    background-size: 100% 100%;
+    background-size: 100%;
+    background-position-y: -25rem;
     padding-top: 1rem;
+    color: $cor-texto;
+
+    &__titulo {
+        font-size: 3rem;
+        margin-top: 1rem;
+    }
 }

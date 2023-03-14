@@ -1,21 +1,18 @@
 @import 'styles/_variaveis.scss';
 
 .campo {
-    // margin: 1.5em 0;
-    font-size: 1.5em;
+    margin: 1rem 0;
+    font-size: 1.5rem;
     text-align: left;
-
-    label {
-        display: block;
-        margin-bottom: 0.2rem;
-        color: $cor-texto;
-        
-    }
 
     input {
         width: 100%;
         box-sizing: border-box;
         padding: 0.5rem;
+        color: $cor-texto;
+        background-color: $azul-escuro;
+        border: 1.5px solid $azul;
+        box-shadow: 8px 8px 8px rgba($color: #000000, $alpha: 0.25);
     }
 
     input::placeholder {
