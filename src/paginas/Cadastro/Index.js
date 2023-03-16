@@ -2,7 +2,7 @@ import Formulario from 'componentes/Formulario';
 import styles from './Cadastro.module.scss';
 import Logo from 'componentes/Logo';
 
-const Cadastro = ({ pilotos, setPilotos }) => {
+const Cadastro = ({ setLogado, setPiloto }) => {
     return (
         <section className={styles.principal}>
             <Logo />
@@ -10,7 +10,7 @@ const Cadastro = ({ pilotos, setPilotos }) => {
                 CRIAR NOVA CONTA
             </h2>
             <div className={styles.principal__formulario}>
-                <Formulario />
+                <Formulario setPiloto={setPiloto} setLogado={setLogado} />
             </div>
         </section>
     )

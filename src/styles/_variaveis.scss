@@ -1,6 +1,7 @@
 //Tipografia
 $fonte-principal: 'Lexend', sans-serif;
 $fonte-menu: 'Outfit', sans-serif;
+$fonte-orbitron: 'Orbitron', sans-serif;
 //Cores
 $cor-texto: #EFEFEF;
 $cor-texto-destaque: #2557FD;
@@ -8,6 +9,7 @@ $branco: #FFFFFF;
 $cinza-claro: #c8cbd3;
 $cinza-escuro: #202020;
 $preto: #000000;
+$azul-bebe: #a9a9ff;
 $azul-claro: #4b4bff;
 $azul: #0d0dd6;
 $azul-escuro: #0a0a36;
@@ -21,3 +23,5 @@ $dourado: #806b0c;
 $desktop: 1130px;
 $tablet: 800px;
 $mobile: 500px;
+//Sombra
+$sombra-de-caixa: 0.5rem 0.5rem 0.5rem rgba($color: #000000, $alpha: 0.25)

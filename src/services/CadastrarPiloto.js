@@ -1,13 +1,20 @@
 import api from 'services/api';
 
-const cadastrarPiloto = (piloto) => {
-    console.log(`/piloto?uuid=${piloto.uuid}`)
-    api
-        .post(`/piloto?uuid=${piloto.uuid}`, piloto)
-        .then(response => console.log(response))
-        .catch(err => {
-            console.error("ops! ocorreu um erro" + err);
-        });
+
+const cadastrarPiloto = (novoPiloto, setPiloto, setLogado) => {
+
+    if (novoPiloto) {
+        api
+            .post(`/piloto?uuid=${novoPiloto.uuid}`, novoPiloto)
+            .then(response => {
+                console.log(response)
+                setPiloto(novoPiloto)
+                setLogado('True')
+            })
+            .catch(err => {
+                console.error("ops! ocorreu um erro" + err);
+            });
+    }
 }
 
 export default cadastrarPiloto;

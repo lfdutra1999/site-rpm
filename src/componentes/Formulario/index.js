@@ -3,10 +3,12 @@ import Botao from './Botao';
 import Campo from './Campo';
 import styles from './Formulario.module.scss';
 import { v4 as uuid } from 'uuid';
-import cadastrarPiloto from 'services/cadastrarPiloto';
 import { useNavigate } from 'react-router-dom';
+import api from 'services/api';
 
-const Formulario = () => {
+
+const Formulario = ({ setPiloto, setLogado }) => {
+    const navigate = useNavigate();
     const [login, setLogin] = useState('')
     const [senha, setSenha] = useState('')
     const [nome, setNome] = useState('')
@@ -19,14 +21,13 @@ const Formulario = () => {
     const [estado, setEstado] = useState('')
     const [controlador, setControlador] = useState('')
     const [linkcanal, setLinkcanal] = useState('')
-    const navigate = useNavigate()
 
     const cadastrar = (evento) => {
         evento.preventDefault()
         var bcrypt = require('bcryptjs');
         var salt = bcrypt.genSaltSync(10);
         var hash = bcrypt.hashSync(senha, salt);
-        const piloto = {
+        const novoPiloto = {
             "uuid": uuid(),
             "login": login,
             "senha": hash,
@@ -42,13 +43,20 @@ const Formulario = () => {
             "linkcanal": linkcanal
         }
 
-        cadastrarPiloto(piloto)
-        navigate('/login')
-
+        api
+            .post(`/piloto?uuid=${novoPiloto.uuid}`, novoPiloto)
+            .then(() => {
+                setPiloto(novoPiloto)
+                setLogado('True')
+                navigate('/area-do-piloto')
+            })
+            .catch(err => {
+                console.error("ops! ocorreu um erro" + err);
+            });
     }
 
     return (
-        <form className={styles.formulario} onSubmit={cadastrar}>
+        <form className={styles.formulario} noValidate autoComplete="off" onSubmit={cadastrar}>
             <section>
                 <h3 className={styles.formulario__titulo}>
                     INFORMAÇÕES ESSENCIAIS

@@ -2,8 +2,17 @@
 
 
 .principal {
+    padding: 1rem 20vw;
     text-align: center;
     background: url('/assets/img/background/mercedes.png') no-repeat;
-    background-size: 100% 100%;
+    background-size: 100%;
     padding-top: 1rem;
+
+    &__titulo {
+        font-size: 4rem;
+        padding-top: 2rem;
+        color: $cor-texto;
+        font-family: $fonte-principal;
+        font-weight: 400;
+    }
 }
