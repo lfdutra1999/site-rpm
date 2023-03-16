@@ -2,6 +2,7 @@ import BarraNav from 'componentes/BarraNav';
 import Piloto from 'componentes/Piloto';
 import Rodape from 'componentes/Rodape';
 import AreaDoPiloto from 'paginas/AreaDoPiloto';
+import EdicaoPiloto from 'paginas/AreaDoPiloto/EdicaoPiloto';
 import Cadastro from 'paginas/Cadastro/Index';
 import Inicio from 'paginas/Inicio';
 import Login from 'paginas/Login';
@@ -54,8 +55,11 @@ function AppRoutes() {
             logado={logado}
             piloto={piloto}
             setPiloto={setPiloto}
-            pilotos={pilotos}
-            setPilotos={setPilotos}
+          />} />
+          <Route path='area-do-piloto/edicao' element={<EdicaoPiloto
+            logado={logado}
+            piloto={piloto}
+            setPiloto={setPiloto}
           />} />
         </Route>
       </Routes>

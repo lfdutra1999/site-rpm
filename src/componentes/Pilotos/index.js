@@ -1,30 +1,24 @@
-import Piloto from 'componentes/Piloto';
-import getPilotos from 'services/getPilotos.service';
+// import Piloto from 'componentes/Piloto';
+// import { useEffect, useState } from 'react';
+// import getPilotos from 'services/getPilotos.service';
 import styles from './Pilotos.modules.scss';
 
 const Pilotos = ({ pilotos, setPilotos }) => {
-    // let pilotoNovo
-    // function adicionaPiloto(piloto) {
-    //     pilotoNovo = piloto
-    //     console.log(piloto)
-    //     console.log(pilotoNovo)
-    //     setPilotos([...pilotos, pilotoNovo])
+    // const [listaPilotos, setListaPilotos] = useState([])
+    
+    // useEffect(() => {
+    //     getPilotos(setListaPilotos)
+    // }, [listaPilotos, setListaPilotos])
 
-    // }
-
-
-    // let listaPilotos
-    // function carregarPilotos(pilotos) {
-    //     listaPilotos = pilotos
+    // const adicionaPiloto = (piloto) => {
+    //     setPilotos([...pilotos, piloto])
     // } 
-
-    // console.log(listaPilotos)
 
 
 
     return (
         <ul className={styles.pilotos}>
-            {/* {listaPilotos.map(piloto => <li><Piloto piloto={piloto.piloto} setPiloto={() => adicionaPiloto()}/></li>)} */}
+            {/* {pilotos.map(piloto => <li><Piloto piloto={piloto.piloto} setPiloto={adicionaPiloto}/></li>)} */}
         </ul>
     )
 

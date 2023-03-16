@@ -1,10 +1,8 @@
 import DesempenhoDoPiloto from 'componentes/DesempenhoDoPiloto';
 import Piloto from 'componentes/Piloto';
-import Pilotos from 'componentes/Pilotos';
 import RedesSocial from 'componentes/RedesSocial';
 import UltimosResultados from 'componentes/UltimosResultados';
-import { Navigate } from 'react-router-dom';
-import getPilotos from 'services/getPilotos.service';
+import { Link, Navigate } from 'react-router-dom';
 import styles from './AreaDoPiloto.module.scss';
 
 const AreaDoPiloto = ({ logado, piloto, setPiloto, pilotos, setPilotos }) => {
@@ -20,6 +18,7 @@ const AreaDoPiloto = ({ logado, piloto, setPiloto, pilotos, setPilotos }) => {
                             piloto={piloto}
                             setPiloto={setPiloto}
                         />
+                        <Link to='/area-do-piloto/edicao'>Editar Cadastro</Link>
                         <RedesSocial />
                     </div>
                     <DesempenhoDoPiloto />
@@ -30,9 +29,6 @@ const AreaDoPiloto = ({ logado, piloto, setPiloto, pilotos, setPilotos }) => {
                     Histórico de Corridas:
                 </h2>
                 <UltimosResultados />
-            </section>
-            <section className={styles.outrosPilotos}>
-                {/* <Pilotos pilotos={pilotos} setPilotos={setPilotos} /> */}
             </section>
         </>
     )
