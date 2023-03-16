@@ -1,22 +1,10 @@
 import styles from './Piloto.module.scss';
-import api from 'services/api';
 import perfilPadrao from 'assets/img/icons/perfil.png'
+import getPiloto from 'services/getPiloto.service';
 
 const Piloto = ({ piloto, setPiloto }) => {
-    function carregaPiloto() {
-        if (piloto.uuid) {
-            console.log(piloto)
-            api
-                .get(`/piloto?uuid=${piloto.uuid}`)
-                .then((response) => setPiloto(response.data))
-                .catch((err) => {
-                    console.error("ops! ocorreu um erro" + err);
-                });
-        }
-    }
-
     return (
-        <div className={styles.piloto} onLoad={() => carregaPiloto()}>
+        <div className={styles.piloto}  onLoad={() => getPiloto(piloto, setPiloto)}>
             <div className={styles.piloto__detalhes}>
                 <div className={styles.piloto__perfil}>
                     <img className={styles.piloto__imagem}

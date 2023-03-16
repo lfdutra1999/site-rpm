@@ -1,25 +1,22 @@
 import api from 'services/api';
 
 const Logar = (login, senha, setLogado, setPiloto) => {
-    const body = {
-        'login': login
-    }
-
     const verificaLogin = (response) => {
         if (response.uuid) {
-            setPiloto({ uuid: response.uuid })
             var bcrypt = require('bcryptjs');
             if (bcrypt.compareSync(senha, response.senha)) {
-                return true
+                setLogado(true)
+                setPiloto({ uuid: response.uuid })
+            } else {
+                alert("Usuário/Senha inválido!!!")
             }
+        } else {
+            alert("Usuário/Senha inválido!!!")
         }
-        alert("Usuário/Senha inválido!!!")
-        return false
-
     }
     api
-        .post('/login', body)
-        .then(response => setLogado(verificaLogin(response.data)))
+        .get(`/login?username=${login}`)
+        .then(response => verificaLogin(response.data.data))
         .catch(err => {
             console.error("ops! ocorreu um erro" + err);
         });

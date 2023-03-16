@@ -3,7 +3,7 @@ import Botao from './Botao';
 import Campo from './Campo';
 import styles from './Formulario.module.scss';
 import { v4 as uuid } from 'uuid';
-import CadastrarPiloto from 'services/CadastrarPiloto';
+import cadastrarPiloto from 'services/cadastrarPiloto';
 import { useNavigate } from 'react-router-dom';
 
 const Formulario = () => {
@@ -42,7 +42,7 @@ const Formulario = () => {
             "linkcanal": linkcanal
         }
 
-        CadastrarPiloto(piloto)
+        cadastrarPiloto(piloto)
         navigate('/login')
 
     }

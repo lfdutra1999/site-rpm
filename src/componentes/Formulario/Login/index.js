@@ -4,6 +4,7 @@ import Campo from '../Campo';
 import styles from '../Formulario.module.scss';
 import Logar from 'services/Login';
 import { useNavigate } from 'react-router-dom';
+import getPiloto from 'services/getPiloto.service';
 
 const FormularioLogin = ({ logado, setLogado, piloto, setPiloto }) => {
     const [login, setLogin] = useState('');

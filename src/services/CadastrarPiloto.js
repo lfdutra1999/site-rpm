@@ -1,6 +1,6 @@
 import api from 'services/api';
 
-const CadastrarPiloto = (piloto) => {
+const cadastrarPiloto = (piloto) => {
     console.log(`/piloto?uuid=${piloto.uuid}`)
     api
         .post(`/piloto?uuid=${piloto.uuid}`, piloto)
@@ -10,4 +10,4 @@ const CadastrarPiloto = (piloto) => {
         });
 }
 
-export default CadastrarPiloto;
+export default cadastrarPiloto;

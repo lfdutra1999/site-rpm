@@ -54,6 +54,8 @@ function AppRoutes() {
             logado={logado}
             piloto={piloto}
             setPiloto={setPiloto}
+            pilotos={pilotos}
+            setPilotos={setPilotos}
           />} />
         </Route>
       </Routes>
