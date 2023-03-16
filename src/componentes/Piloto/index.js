@@ -1,10 +1,15 @@
 import styles from './Piloto.module.scss';
 import perfilPadrao from 'assets/img/icons/perfil.png'
 import getPiloto from 'services/getPiloto.service';
+import { useEffect } from 'react';
 
 const Piloto = ({ piloto, setPiloto }) => {
+    useEffect(() => {
+        getPiloto(piloto, setPiloto)
+    }, [])
+
     return (
-        <div className={styles.piloto}  onLoad={() => getPiloto(piloto, setPiloto)}>
+        <div className={styles.piloto}>
             <div className={styles.piloto__detalhes}>
                 <div className={styles.piloto__perfil}>
                     <img className={styles.piloto__imagem}
