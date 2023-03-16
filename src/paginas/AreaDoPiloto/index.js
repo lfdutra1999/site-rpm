@@ -32,7 +32,7 @@ const AreaDoPiloto = ({ logado, piloto, setPiloto, pilotos, setPilotos }) => {
                 <UltimosResultados />
             </section>
             <section className={styles.outrosPilotos}>
-                <Pilotos pilotos={pilotos} setPilotos={setPilotos} />
+                {/* <Pilotos pilotos={pilotos} setPilotos={setPilotos} /> */}
             </section>
         </>
     )
