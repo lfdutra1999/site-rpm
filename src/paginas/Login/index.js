@@ -1,6 +1,7 @@
+import { color } from '@mui/system';
 import FormularioLogin from 'componentes/Formulario/Login';
 import Logo from 'componentes/Logo';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import styles from './Login.module.scss';
 
 const Login = ({ piloto, setPiloto, logado, setLogado }) => {
@@ -19,6 +20,7 @@ const Login = ({ piloto, setPiloto, logado, setLogado }) => {
                 piloto={piloto}
                 setPiloto={setPiloto}
             />
+            <p style={{fontSize: '32px', color: '#000'}}>Não tem cadastro? <Link to='/cadastro'>Cadastre-se agora</Link></p>
         </section>
     )
 }
