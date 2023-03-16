@@ -1,3 +1,4 @@
+import FormEdicaoPiloto from "componentes/Formulario/FormEdicaoPiloto";
 import { Navigate } from "react-router-dom";
 
 
@@ -6,7 +7,13 @@ const EdicaoPiloto = ({ logado, piloto, setPiloto }) => {
         return <Navigate replace to="/login" />;
     }
     return (
-        <h1>Edicao Piloto</h1>
+        <section>
+            <h1>Edicao Piloto</h1>
+            <FormEdicaoPiloto
+                piloto={piloto}
+                setPiloto={setPiloto}
+            />
+        </section>
     )
 }
 

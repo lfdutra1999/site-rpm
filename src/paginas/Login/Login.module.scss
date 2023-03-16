@@ -5,11 +5,16 @@
     background: url('/assets/img/background/mercedes.png') no-repeat;
     background-size: 100%;
     background-position-y: -25rem;
-    padding-top: 1rem;
+    padding: 1rem 25vw;
     color: $cor-texto;
 
     &__titulo {
-        font-size: 3rem;
+        font-size: 4rem;
         margin-top: 1rem;
+        font-weight: 400;
+    }
+
+    &__texto {
+        font-size: 2rem;
     }
 }

@@ -1,8 +1,9 @@
 import styles from './Campo.module.scss';
 
-const Campo = ({ type = 'text', placeholder, valor, aoAlterado, obrigatorio = false }) => {
+const Campo = ({ type = 'text',label, placeholder, valor, aoAlterado, obrigatorio = false }) => {
     return (
         <div className={styles.campo}>
+            <label>{label ? label : ''}</label>
             <input
                 type={type}
                 value={valor}

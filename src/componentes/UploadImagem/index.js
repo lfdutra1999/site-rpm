@@ -1,11 +1,7 @@
 import styles from './UploadImagem.module.scss';
-import perfil from 'assets/img/icons/perfil.jpg';
-import { useState } from 'react';
+import ImagemPerfil from 'componentes/ImagemPerfil';
 
 const UploadImagem = ({ imagem, setImagem }) => {
-
-
-
     const getImagem = (evento) => {
         const teste = URL.createObjectURL(evento.target.files[0])
         setImagem(teste)
@@ -14,11 +10,7 @@ const UploadImagem = ({ imagem, setImagem }) => {
 
     return (
         <div className={styles.uploadImagem}>
-            <img
-                className={styles.uploadImagem__previewImagem}
-                src={imagem ? imagem : perfil}
-                alt="imagem de perfil"
-            />
+            <ImagemPerfil imagem={imagem} />
             <input className={styles.uploadImagem__input} type='file' id='imagem' onChange={(event) => getImagem(event)} />
             <label htmlFor='imagem'>
                 <span className={styles.uploadImagem__selecionarArquivo}>
