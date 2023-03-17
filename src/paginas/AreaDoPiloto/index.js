@@ -5,9 +5,17 @@ import UltimosResultados from 'componentes/UltimosResultados';
 import { Link, Navigate } from 'react-router-dom';
 import styles from './AreaDoPiloto.module.scss';
 
-const AreaDoPiloto = ({ logado, piloto, setPiloto, pilotos, setPilotos }) => {
+const AreaDoPiloto = ({ logado, setLogado, admin, setAdmin, piloto, setPiloto }) => {
     if (!logado) {
         return <Navigate replace to="/login" />;
+    }
+
+    const logout = () => {
+        setLogado(false)
+        setAdmin(false)
+        setPiloto({})
+        return <Navigate replace to="/" />;
+
     }
     return (
         <>
@@ -17,8 +25,10 @@ const AreaDoPiloto = ({ logado, piloto, setPiloto, pilotos, setPilotos }) => {
                         <Piloto
                             piloto={piloto}
                             setPiloto={setPiloto}
+                            logout={logout}
+                            admin={admin}
+                            setAdmin={setAdmin}
                         />
-                        <Link to='/area-do-piloto/edicao'>Editar Cadastro</Link>
                         <RedesSocial />
                     </div>
                     <DesempenhoDoPiloto />
