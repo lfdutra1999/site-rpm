@@ -2,9 +2,6 @@
 
 .hallDaFama {
     text-align: center;
-    background: url('/assets/img/background/cinza.png') no-repeat;
-    background-position-y: -400px;
-    width: $desktop;
     height: 665px;
     margin: 0 auto;
 
@@ -24,6 +21,8 @@
     }
 
     &__lista {
+        width: $desktop;
+        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;

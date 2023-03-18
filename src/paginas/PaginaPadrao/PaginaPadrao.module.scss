@@ -2,9 +2,23 @@
 
 .cabecalho {
     display: flex;
-    margin: 0 auto;
+    margin: 1em auto;
     justify-content: space-around;
     align-items: center;
     background-color: $cinza-escuro;
     width: $desktop;
+    flex-wrap: wrap;
+}
+
+@media (max-width: $desktop){
+    .cabecalho {
+    width: $tablet;
+    gap: 1em;
+    }
+}
+
+@media (max-width: $tablet){
+    .cabecalho {
+        width: $mobile;
+    }
 }

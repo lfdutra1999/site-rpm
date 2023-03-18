@@ -5,7 +5,7 @@ import styles from './Noticias.module.scss';
 const Noticias = () => {
     return (
         <div className={styles.noticias}>
-            <h2>Fique por dentro</h2>
+            <h2>Fique Por Dentro</h2>
             <Noticia />
             <Noticia />
             <Noticia />

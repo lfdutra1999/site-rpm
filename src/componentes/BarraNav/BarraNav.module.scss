@@ -3,13 +3,27 @@
 .barraNav {
     background-color: $cinza-claro;
     color: $preto;
-    padding: 1em 10vw;
+    padding: 1em;
     
-
     &__lista {
+        width: $desktop;
         display: flex;
         justify-content: space-between;
         list-style: none;
         flex-wrap: wrap;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: $desktop) {   
+    .barraNav__lista {
+        width: $tablet;
+    }
+}
+
+@media (max-width: $tablet) {   
+    .barraNav__lista {
+        width: $mobile;
+        text-align: center;
     }
 }

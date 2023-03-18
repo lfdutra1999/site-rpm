@@ -1,7 +1,7 @@
 @import 'styles/_variaveis.scss';
 
 .tabelas {
-    margin: 1em auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     width: $desktop;
@@ -11,5 +11,17 @@
         font-size: 4em;
         color: $cor-texto;
         font-weight: 700;
+    }
+}
+
+@media (max-width: $desktop) {
+    .tabelas {
+        width: $tablet;
+    }
+}
+
+@media (max-width: $tablet) {
+    .tabelas {
+        width: $mobile;
     }
 }

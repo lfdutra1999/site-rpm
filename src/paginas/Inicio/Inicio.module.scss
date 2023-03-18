@@ -2,7 +2,7 @@
 
 .principal {
     background: url('/assets/img/background/principal.png') no-repeat;
-    background-size: 100vw;
+    background-size: cover;
     background-position-y: center;
     display: flex;
     flex-direction: column;
@@ -18,9 +18,27 @@
     }
 }
 
+@media (max-width: 1100px){
+    .principal__container {
+        width: $mobile;
+        margin: 1rem auto;
+        justify-content: space-evenly;
+    }
+}
+
+
 .tabelas{
     background: url('/assets/img/background/daytona.png') no-repeat;
     background-position-y: center;
-    background-size: 100vw;
+    background-size: cover;
+}
+
+.hallDaFama {
+    background: url('/assets/img/background/cinza.png') no-repeat;
+    background-size: cover;
+}
+
+.ultimasNoticias {
+    background-color: $branco;
 }
 

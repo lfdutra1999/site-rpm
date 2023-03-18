@@ -2,8 +2,16 @@
 
 .noticias {
     background-color: $preto;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     border-radius: 8px;
     padding: 8px;
     color: $cor-texto;
+}
+
+.noticias h2{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
 }

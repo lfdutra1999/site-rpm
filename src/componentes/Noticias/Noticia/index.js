@@ -9,7 +9,7 @@ const Noticia = () => {
                 src={noticiaImg}
                 alt="Capa da noticia"
             />
-            <h2 className={styles.noticia__titulo}>Titulo da noticia</h2>
+            <h2 className={styles.noticia__titulo}>Titulo da Notícia</h2>            
         </div>
     )
 }
