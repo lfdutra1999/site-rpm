@@ -3,7 +3,7 @@ import Logo from 'componentes/Logo';
 import { Link, Navigate } from 'react-router-dom';
 import styles from './Login.module.scss';
 
-const Login = ({ piloto, setPiloto, logado, setLogado }) => {
+const Login = ({ piloto, setPiloto, logado, setLogado, admin, setAdmin }) => {
     if (logado) {
         return <Navigate replace to="/area-do-piloto" />
     }
@@ -18,9 +18,11 @@ const Login = ({ piloto, setPiloto, logado, setLogado }) => {
                 setLogado={setLogado}
                 piloto={piloto}
                 setPiloto={setPiloto}
+                admin={admin}
+                setAdmin={setAdmin}
             />
             <p className={styles.principal__texto}>Não tem cadastro?
-                    <Link to='/cadastro'>Cadastre-se agora</Link>
+                <Link to='/cadastro'>Cadastre-se agora</Link>
             </p>
         </section>
     )

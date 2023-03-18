@@ -1,12 +1,15 @@
 import api from 'services/api';
 
-const Logar = (login, senha, setLogado, setPiloto) => {
+const Logar = (login, senha, setLogado, setPiloto, setAdmin) => {
     const verificaLogin = (response) => {
         if (response.uuid) {
             var bcrypt = require('bcryptjs');
             if (bcrypt.compareSync(senha, response.senha)) {
                 setLogado(true)
                 setPiloto({ uuid: response.uuid })
+                if (response.isAdmin === 1) {
+                    setAdmin(true)
+                }
             } else {
                 alert("Usuário/Senha inválido!!!")
             }

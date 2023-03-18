@@ -6,7 +6,7 @@ import Logar from 'services/Login';
 import { useNavigate } from 'react-router-dom';
 import getPiloto from 'services/getPiloto.service';
 
-const FormularioLogin = ({ logado, setLogado, piloto, setPiloto }) => {
+const FormularioLogin = ({ logado, setLogado, setPiloto, setAdmin }) => {
     const [login, setLogin] = useState('');
     const [senha, setSenha] = useState('');
     const navigate = useNavigate()
@@ -19,7 +19,7 @@ const FormularioLogin = ({ logado, setLogado, piloto, setPiloto }) => {
 
     const logar = (evento) => {
         evento.preventDefault()
-        Logar(login, senha, setLogado, setPiloto)
+        Logar(login, senha, setLogado, setPiloto, setAdmin)
     }
 
     return (

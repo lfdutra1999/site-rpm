@@ -21,6 +21,7 @@ function AppRoutes() {
   const [indexCarrosel, setIndexsCarrosel] = useState([1, 2, 3, 4, 5, 6]);
   const [piloto, setPiloto] = useState({})
   const [logado, setLogado] = useState(false)
+  const [admin, setAdmin] = useState(false)
 
   return (
     <BrowserRouter>
@@ -44,13 +45,18 @@ function AppRoutes() {
           <Route path='login' element={<Login
             logado={logado}
             setLogado={setLogado}
+            admin={admin}
+            setAdmin={setAdmin}
             piloto={piloto}
             setPiloto={setPiloto}
           />} />
           <Route path='area-do-piloto' element={<AreaDoPiloto
             logado={logado}
+            setLogado={setLogado}
             piloto={piloto}
             setPiloto={setPiloto}
+            admin={admin}
+            setAdmin={setAdmin}
           />} />
           <Route path='area-do-piloto/edicao' element={<EdicaoPiloto
             logado={logado}
