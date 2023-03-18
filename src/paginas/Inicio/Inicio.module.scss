@@ -3,6 +3,7 @@
 .principal {
     background: url('/assets/img/background/principal.png') no-repeat;
     background-size: 100vw;
+    background-position-y: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,3 +17,10 @@
         text-align: center;
     }
 }
+
+.tabelas{
+    background: url('/assets/img/background/daytona.png') no-repeat;
+    background-position-y: center;
+    background-size: 100vw;
+}
+

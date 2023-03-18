@@ -2,11 +2,10 @@
 
 .ultimasNoticias {
     background-color: $branco;
-    width: 1130px;
+    max-width: $desktop;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    flex-wrap: wrap
 
     &__titulo {
         padding-left: 16px;
@@ -17,9 +16,32 @@
         display: flex;
         justify-content: space-between;
         list-style: none;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     &__noticia__item {
         cursor: pointer;
+    }
+}
+
+@media (max-width: 1100px) {
+    .ultimasNoticias {
+        max-width: $tablet;
+    
+        &__noticias {
+            justify-content: center;
+            gap:30px;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .ultimasNoticias {
+        max-width: $mobile;
+    
+        &__noticias {
+            gap:20px;
+        }
     }
 }

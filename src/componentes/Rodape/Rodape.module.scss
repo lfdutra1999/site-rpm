@@ -1,10 +1,12 @@
 @import 'styles/_variaveis.scss';
 
 .rodape {
-    background: url('/assets/img/background/daytona.png') no-repeat;
-    background-position-y: -600px;
+    background: url('/assets/img/background/daytona.png') no-repeat ;
+    background-position-y: 80%;
     text-align: center;
     padding-top: 16px;
+    background-size: 100vw;
+
 
     &__img {
         width: 128px;
