@@ -27,3 +27,12 @@
         font-size: 1.25em;
     }
 }
+
+@media (max-width: $desktop){
+
+    .campo {
+        input {
+            font-size: 1em;
+        }
+    }
+}
