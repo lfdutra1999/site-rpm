@@ -29,10 +29,20 @@
 @media (max-width: $desktop) {   
     
     .eventosDestaque {
-        width: 500px;
+        width: calc(500px) ;
 
         &__video {
-            width: 400px;
+            width: 450px;
+        }
+    }
+}
+
+@media (max-width: $tablet) {   
+    .eventosDestaque {
+        width: $mobile;
+
+        &__video {
+            width: calc($mobile - 30px);
         }
     }
 }

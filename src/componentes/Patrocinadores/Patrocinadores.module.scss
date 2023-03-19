@@ -5,13 +5,27 @@
     align-items: center;
     justify-content: center;
     list-style: none;
-    gap: 16px;
+    justify-content: space-around;
+
     background-color: $preto;
     border-radius: 4px;
-    width: 100%;
+    width: $desktop;
 
     &__img {
         width: 64px;
         padding: 4px;
+    }
+}
+
+@media (max-width: $desktop) {   
+    .patrocinadores {
+        width: $tablet;
+    }
+}
+
+@media (max-width: $tablet) {   
+    .patrocinadores {
+        width: $mobile;
+        flex-wrap: wrap;
     }
 }

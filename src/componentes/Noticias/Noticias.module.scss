@@ -8,10 +8,27 @@
     border-radius: 8px;
     padding: 8px;
     color: $cor-texto;
+    box-sizing: border-box;
 }
 
 .noticias h2{
     display: flex;
     justify-content: flex-start;
     font-size: 20px;
+}
+
+@media (max-width: $desktop) {   
+    .noticias {
+        width: 250px;
+    }
+}
+
+@media (max-width: $tablet) {   
+    .noticias {
+        margin-top: 1em;
+        width: $mobile;
+    }
+    .noticias h2{
+        justify-content: center;
+    }
 }

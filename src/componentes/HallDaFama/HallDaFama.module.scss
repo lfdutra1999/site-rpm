@@ -1,8 +1,8 @@
 @import 'styles/_variaveis.scss';
 
 .hallDaFama {
+    max-width: $desktop;
     text-align: center;
-    height: 665px;
     margin: 0 auto;
 
     &__cabecalho {
@@ -21,13 +21,24 @@
     }
 
     &__lista {
-        width: $desktop;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         align-items: center;
         list-style: none;
         margin-top: 16px;
     }
 
+}
+
+@media (max-width: $desktop) {
+    .hallDaFama {
+        max-width: $tablet;
+    
+        &__lista  {
+            justify-content: center;
+            gap:30px;
+        }
+    }
 }
