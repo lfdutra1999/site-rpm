@@ -37,7 +37,7 @@ const Piloto = ({ piloto, setPiloto, admin, setAdmin, logout }) => {
                                     <MenuIcon />
                                 </Button>
                                 <Menu {...bindMenu(popupState)}>
-                                    {piloto?.admin === 1 ? <MenuItem onClick={() => administrar()}>Admin</MenuItem> : ''}
+                                    {admin ? <MenuItem onClick={() => administrar()}>Admin</MenuItem> : ''}
                                     <MenuItem onClick={() => editarPerfil()}>Editar</MenuItem>
                                     <MenuItem onClick={() => logout()}>Logout</MenuItem>
                                 </Menu>

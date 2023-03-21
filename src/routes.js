@@ -1,5 +1,6 @@
 import BarraNav from 'componentes/BarraNav';
 import Rodape from 'componentes/Rodape';
+import Admin from 'paginas/Admin';
 import AreaDoPiloto from 'paginas/AreaDoPiloto';
 import EdicaoPiloto from 'paginas/AreaDoPiloto/EdicaoPiloto';
 import Cadastro from 'paginas/Cadastro/Index';
@@ -62,6 +63,9 @@ function AppRoutes() {
             logado={logado}
             piloto={piloto}
             setPiloto={setPiloto}
+          />} />
+          <Route path='admin' element={<Admin
+            admin={admin}
           />} />
         </Route>
       </Routes>

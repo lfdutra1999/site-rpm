@@ -1,0 +1,11 @@
+@import 'styles/_variaveis.scss';
+
+.aba {
+    padding: 1rem;
+    cursor: pointer;
+
+    &__selecionado {
+        padding: 0.5rem;
+        border-bottom: 1px solid $azul;
+    }
+}

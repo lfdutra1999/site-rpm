@@ -1,0 +1,9 @@
+@import 'styles/_variaveis.scss';
+
+.formulario {
+
+    &__datas {
+        display: flex;
+        justify-content: space-between;
+    }
+}

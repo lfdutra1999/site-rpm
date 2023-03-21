@@ -2,7 +2,7 @@ import DesempenhoDoPiloto from 'componentes/DesempenhoDoPiloto';
 import Piloto from 'componentes/Piloto';
 import RedesSocial from 'componentes/RedesSocial';
 import UltimosResultados from 'componentes/UltimosResultados';
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import styles from './AreaDoPiloto.module.scss';
 
 const AreaDoPiloto = ({ logado, setLogado, admin, setAdmin, piloto, setPiloto }) => {
