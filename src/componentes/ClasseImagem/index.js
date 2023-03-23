@@ -1,6 +1,8 @@
+import styles from './ClasseImagem.module.scss';
+
 const ClasseImagem = ({ imagem }) => {
     return (
-        <img
+        <img className={styles.imagemClasse}
             src={imagem}
             alt="Imagem da classe"
         />

@@ -4,32 +4,35 @@ import UploadImagem from 'componentes/UploadImagem';
 import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
-const FormularioClasse = ({ classe, aoSubmeter }) => {
+const FormularioPista = ({ pista, aoSubmeter }) => {
     const [nome, setNome] = useState('')
+    const [pais, setPais] = useState('')
     const [imagem, setImagem] = useState('')
     useEffect(() => {
-        if (classe) {
-            setNome(classe.nome)
-            setImagem(classe.imagem)
+        if (pista) {
+            setNome(pista.nome)
+            setPais(pista.pais)
+            setImagem(pista.imagem)
         }
-    },[classe])
+    }, [pista])
 
     const onSubmit = (evento) => {
         evento.preventDefault()
-        const novaClasse = {
+        const novaPista = {
             uuid: uuid(),
             nome: nome,
+            pais: pais,
             imagem: imagem
         }
-        if (classe?.uuid) {
-            novaClasse.uuid = classe.uuid
+        if (pista?.uuid) {
+            novaPista.uuid = pista.uuid
         }
-        aoSubmeter(novaClasse)
+        aoSubmeter(novaPista)
     }
 
     return (
         <form onSubmit={evento => onSubmit(evento)}>
-            <UploadImagem imagem={imagem} setImagem={setImagem} type='classe' />
+            <UploadImagem imagem={imagem} setImagem={setImagem} type='carro' />
             <Campo
                 placeholder='Nome:'
                 valor={nome}
@@ -37,10 +40,17 @@ const FormularioClasse = ({ classe, aoSubmeter }) => {
                 obrigatorio={true}
                 aoAlterado={valor => setNome(valor)}
             />
+            <Campo
+                placeholder='Pais:'
+                valor={pais}
+                type='text'
+                obrigatorio={true}
+                aoAlterado={valor => setPais(valor)}
+            />
             <Botao>Confirmar</Botao>
         </form>
     )
 }
 
 
-export default FormularioClasse;
+export default FormularioPista;

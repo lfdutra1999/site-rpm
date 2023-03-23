@@ -26,7 +26,7 @@ const FormularioGrid = ({ temporadas, grid, aoSubmeter }) => {
             diaDaSemana: diaDaSemana,
             linkOnboard: linkOnboard
         }
-        if (grid.uuid) {
+        if (grid?.uuid) {
             novoGrid.uuid = grid.uuid
         }
 

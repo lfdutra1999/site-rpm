@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import api from "services/api";
 import UploadImageToS3WithReactS3 from "services/uploadImagemAws";
-import FormularioClasse from "../FormularioClasse";
+import FormularioCarro from "../FormularioCarro";
 
-const EditarClasses = ({ classes, setClasses }) => {
+const NovoCarro = ({ classes }) => {
     const [classeSelecionada, setClasseSelecionada] = useState({})
+    const [carro, setCarro] = useState({})
     const [imagem, setImagem] = useState();
-    const alterarClasse = (novaClasse) => {
-        api.put(`/classe?uuid=${novaClasse.uuid}`, novaClasse)
+    const cadastrarClasse = (novoCarro) => {
+        api.post(`/carro?uuid=${novoCarro.uuid}&classeUuid=${classeSelecionada.uuid}`, novoCarro)
             .then(() => {
-                setClasseSelecionada(novaClasse)
-                UploadImageToS3WithReactS3(setImagem, novaClasse.imagem, 'classe')
+                setCarro(novoCarro)
+                UploadImageToS3WithReactS3(setImagem, novoCarro.imagem, 'carro')
             })
             .catch(erro => {
                 console.log('Ocorreu um erro inesperado' + erro)
@@ -18,22 +19,16 @@ const EditarClasses = ({ classes, setClasses }) => {
     }
 
     useEffect(() => {
-        const classeAtualizadas = classes.filter(classe => classe.uuid !== classeSelecionada.uuid)
-        setClasses([...classeAtualizadas, classeSelecionada])
-    }, [classeSelecionada, classes, setClasses])
-
-    useEffect(() => {
-        console.log(imagem)
         if (typeof imagem === 'string' || imagem instanceof String) {
-            console.log('entrou aqui!')
             const body = {
+                classe_uuid: classeSelecionada.uuid,
                 imagem: imagem
             }
-            api.post(`/upload?uuid=${classeSelecionada.uuid}&tipo=classe`, body)
+            api.post(`/upload?uuid=${carro.uuid}&tipo=carro`, body)
                 .then(() => { })
                 .catch(erro => console.log(erro))
         }
-    }, [imagem, classeSelecionada])
+    }, [imagem, carro, classeSelecionada])
 
     const aoAlterarClasse = (evento) => {
         const classeSelecionada2 = classes.filter(classe => classe.uuid === evento.target.value)
@@ -46,9 +41,9 @@ const EditarClasses = ({ classes, setClasses }) => {
                 <option value={null} key='1'>Selecione uma classe</option>
                 {classes.map(classe => <option key={classe.uuid} value={classe.uuid}>{classe.nome}</option>)}
             </select>
-            <FormularioClasse classe={classeSelecionada} aoSubmeter={alterarClasse} />
+            <FormularioCarro classe={classeSelecionada} aoSubmeter={cadastrarClasse} />
         </div>
     )
 }
 
-export default EditarClasses;
+export default NovoCarro;

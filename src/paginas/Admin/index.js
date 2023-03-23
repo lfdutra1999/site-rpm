@@ -1,7 +1,10 @@
 import { MenuItem, MenuList } from '@mui/material';
+import AdminCarro from 'componentes/Admin/AdminCarros';
+import AdminCategorias from 'componentes/Admin/AdminCategorias';
 import AdminClasse from 'componentes/Admin/AdminClasse';
 import AdminEquipes from 'componentes/Admin/AdminEquipes';
 import AdminGrids from 'componentes/Admin/AdminGrids';
+import AdminPistas from 'componentes/Admin/AdminPistas';
 import AdminTemporadas from 'componentes/Admin/AdminTemporadas';
 import { useEffect, useState } from 'react';
 import api from 'services/api';
@@ -11,6 +14,8 @@ const Admin = ({ admin }) => {
     const [temporadas, setTemporadas] = useState([])
     const [grids, setGrids] = useState([])
     const [classes, setClasses] = useState([])
+    const [carros, setCarros] = useState([])
+    const [pistas, setPistas] = useState([])
 
     useEffect(() => {
         api.get('/temporadas')
@@ -39,6 +44,26 @@ const Admin = ({ admin }) => {
                 console.log('Ops, ocorreu um erro inesperado: ' + erro)
             })
     }, [])
+    useEffect(() => {
+        api.get('/carros')
+            .then(resposta => {
+                setCarros(resposta.data.data)
+            })
+            .catch(erro => {
+                console.log('Ops, ocorreu um erro inesperado: ' + erro)
+            })
+    }, [])
+    useEffect(() => {
+        api.get('/pistas')
+            .then(resposta => {
+                setPistas(resposta.data.data)
+            })
+            .catch(erro => {
+                console.log('Ops, ocorreu um erro inesperado: ' + erro)
+            })
+    }, [])
+
+
     const [itemAmostra, setItemAmostra] = useState();
     const itemVisivel = (item) => {
         if (item === 'equipes') {
@@ -52,6 +77,18 @@ const Admin = ({ admin }) => {
                 } else {
                     if (item === 'classes') {
                         setItemAmostra(<AdminClasse classes={classes} setClasses={setClasses} />)
+                    } else {
+                        if (item === 'carros') {
+                            setItemAmostra(<AdminCarro carros={carros} setCarros={setCarros} classes={classes} setClasses={setClasses} />)
+                        } else {
+                            if (item === 'pistas') {
+                                setItemAmostra(<AdminPistas pistas={pistas} setPistas={setPistas} />)
+                            } else {
+                                if (item === 'categorias') {
+                                    setItemAmostra(<AdminCategorias grids={grids} />)
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -67,6 +104,7 @@ const Admin = ({ admin }) => {
                         <MenuItem onClick={() => itemVisivel('equipes')}>Equipes</MenuItem>
                         <MenuItem onClick={() => itemVisivel('temporadas')}>Temporadas</MenuItem>
                         <MenuItem onClick={() => itemVisivel('grids')}>Grids</MenuItem>
+                        <MenuItem onClick={() => itemVisivel('categorias')}>Categorias</MenuItem>
                         <MenuItem onClick={() => itemVisivel('etapas')}>Etapas</MenuItem>
                         <MenuItem onClick={() => itemVisivel('classes')}>Classes</MenuItem>
                         <MenuItem onClick={() => itemVisivel('carros')}>Carros</MenuItem>

@@ -1,35 +1,34 @@
 import Botao from 'componentes/Formulario/Botao';
 import Campo from 'componentes/Formulario/Campo';
-import UploadImagem from 'componentes/UploadImagem';
 import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
-const FormularioClasse = ({ classe, aoSubmeter }) => {
+const FormularioCategoria = ({ categoria, grid, aoSubmeter }) => {
     const [nome, setNome] = useState('')
-    const [imagem, setImagem] = useState('')
+    const [horario, setHorario] = useState('')
     useEffect(() => {
-        if (classe) {
-            setNome(classe.nome)
-            setImagem(classe.imagem)
+        if (categoria) {
+            setNome(categoria.nome)
+            setHorario(categoria.horario)
         }
-    },[classe])
+    }, [categoria])
 
     const onSubmit = (evento) => {
         evento.preventDefault()
-        const novaClasse = {
+        const novaCategoria = {
             uuid: uuid(),
+            gridUuid: grid.uuid,
             nome: nome,
-            imagem: imagem
+            horario: horario,
         }
-        if (classe?.uuid) {
-            novaClasse.uuid = classe.uuid
+        if (categoria?.uuid) {
+            novaCategoria.uuid = categoria.uuid
         }
-        aoSubmeter(novaClasse)
+        aoSubmeter(novaCategoria)
     }
 
     return (
         <form onSubmit={evento => onSubmit(evento)}>
-            <UploadImagem imagem={imagem} setImagem={setImagem} type='classe' />
             <Campo
                 placeholder='Nome:'
                 valor={nome}
@@ -37,10 +36,17 @@ const FormularioClasse = ({ classe, aoSubmeter }) => {
                 obrigatorio={true}
                 aoAlterado={valor => setNome(valor)}
             />
+            <Campo
+                placeholder='Horario:'
+                valor={horario}
+                type='hour'
+                obrigatorio={true}
+                aoAlterado={valor => setHorario(valor)}
+            />
             <Botao>Confirmar</Botao>
         </form>
     )
 }
 
 
-export default FormularioClasse;
+export default FormularioCategoria;

@@ -4,32 +4,38 @@ import UploadImagem from 'componentes/UploadImagem';
 import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
-const FormularioClasse = ({ classe, aoSubmeter }) => {
+const FormularioCarro = ({ carro, classe, aoSubmeter }) => {
     const [nome, setNome] = useState('')
     const [imagem, setImagem] = useState('')
     useEffect(() => {
-        if (classe) {
-            setNome(classe.nome)
-            setImagem(classe.imagem)
+        if (carro) {
+            setNome(carro.nome)
+            setImagem(carro.imagem)
         }
-    },[classe])
+    }, [carro])
 
     const onSubmit = (evento) => {
         evento.preventDefault()
-        const novaClasse = {
-            uuid: uuid(),
-            nome: nome,
-            imagem: imagem
+        if (classe) {
+            console.log(classe)
+            const novoCarro = {
+                uuid: uuid(),
+                classe_uuid: classe.uuid,
+                nome: nome,
+                imagem: imagem
+            }
+            if (carro?.uuid) {
+                novoCarro.uuid = carro.uuid
+            }
+            aoSubmeter(novoCarro)
+        } else {
+            alert("Selecione uma classe.")
         }
-        if (classe?.uuid) {
-            novaClasse.uuid = classe.uuid
-        }
-        aoSubmeter(novaClasse)
     }
 
     return (
         <form onSubmit={evento => onSubmit(evento)}>
-            <UploadImagem imagem={imagem} setImagem={setImagem} type='classe' />
+            <UploadImagem imagem={imagem} setImagem={setImagem} type='carro' />
             <Campo
                 placeholder='Nome:'
                 valor={nome}
@@ -43,4 +49,4 @@ const FormularioClasse = ({ classe, aoSubmeter }) => {
 }
 
 
-export default FormularioClasse;
+export default FormularioCarro;

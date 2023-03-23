@@ -17,11 +17,9 @@ const FormularioTemporadas = ({ temporada, aoSubmeter }) => {
             dtInicio: dtInicio,
             dtFim: dtFim
         }
-        if (temporada.uuid) {
+        if (temporada?.uuid) {
             novaTemporada.uuid = temporada.uuid
         }
-        
-
         aoSubmeter(novaTemporada)
     }
 
