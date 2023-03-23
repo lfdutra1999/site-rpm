@@ -29,10 +29,17 @@
 }
 
 @media (max-width: $desktop){
-
     .campo {
         input {
             font-size: 1em;
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .campo {
+        input {
+            font-size: 0.8em;
         }
     }
 }
