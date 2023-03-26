@@ -1,4 +1,5 @@
 import LinkInterno from 'componentes/LinkInterno';
+import MenuOpcoes from 'componentes/MenuOpcoes';
 import styles from './BarraNav.module.scss';
 
 const BarraNav = () => {
@@ -10,8 +11,18 @@ const BarraNav = () => {
         },
         {
             id: 3,
-            nome: "Inscriçao",
-            path: "inscricao"
+            nome: "Temporada 17",
+            path: "T17",
+            submenu: [
+                {
+                    path: "t17/ac",
+                    nome: "Stock Car AC"
+                },
+                {
+                    path: "t17/acc",
+                    nome: "GT3 ACC"
+                }
+            ]
         },
         {
             id: 4,
@@ -39,14 +50,17 @@ const BarraNav = () => {
         <nav className={styles.barraNav}>
             <ul className={styles.barraNav__lista}>
                 {itensMenu.map(item => (
-                    <li key={item.id}>
-                        <LinkInterno
-                            path={item.path}
-                            estilo="itemMenu"
-                        >
-                            {item.nome}
-                        </LinkInterno>
-                    </li>
+                    item.submenu
+                        ? <MenuOpcoes key={item.id} nome={item.nome} opcoes={item.submenu} />
+                        : <li key={item.id}>
+                            <LinkInterno
+                                path={item.path}
+                                estilo="itemMenu"
+                            >
+                                {item.nome}
+                            </LinkInterno>
+                        </li>
+
                 ))}
             </ul>
         </nav>
